@@ -1,0 +1,92 @@
+1、定义， 调用， 原型
+
+2、
+a) void igor(void);
+b) flaot tofu(int);
+c) double mpg(double, double);
+d) long summation(long [], int)
+e) double doctor(const char*);
+f) void ofcourse(boss );
+g) char *plot(map * );
+
+3、
+void set_Array(int arr[], int size, int value)
+{
+    for(int i = 0; i< size; ++i)
+	arr[i] = value;
+{
+
+4、
+void set_Array2(int *begin, int *end, int value)
+{
+	for(inr *pt = begin; pt < end; pt++)
+		*pt = value;
+}
+
+5、
+double find_Max(const double arr[], int length)
+{
+	double max = arr[0];
+	for(int i = 1; i < length; ++i)
+	{
+		if(arr[i] > max)
+			max = arr[i];
+	}
+	return max; 
+}
+
+6、基本类型是按值传递，函数内无法修改实参的值，修改的只是实参的副本；若是以指针的形式传递，则要考虑加const
+
+7、字符数组，字符串常量，字符串指针
+
+8、
+int replace (char* str, char c1, char c2)
+{
+	int count = 0;
+	while(*str)
+	{
+		if(*str == c1)
+		{
+			*str = c2;
+			count ++;
+		}
+		str++;
+	}
+	return count;
+}
+
+9、
+*"pizza" -> 'p'; 
+"taco"[2] -> char *pt = "taco" -> pt[2] -> c;
+
+10、
+形参写为glitz即为按值传递，保护原始数据，但是效率低
+形参写为*glitz即为按地址传递
+
+11、
+int judge(int (*fp)(const char *));
+
+12、
+a) 
+void show(application ap)
+{
+	cout << ap.name << endl;
+	for(int i = 0 ; i < 3; ++i)
+		cout << ap.credit_ratings[i] <<endl;
+}
+
+b)
+void show(const application *ap)
+{
+	cout << ap->name << endl;
+	for(int i = 0 ; i < 3; ++i)
+		cout << ap->credit_ratings[i] <<endl;
+}
+
+13、
+typedef void (*p_f1)(applicant *a);
+p_f1 p1 = f1;
+typedef const char *(*p_f2)(const applicant *a1, const applicant *a2);
+p_f2 p2 = f2;
+p_f1 ap[5];
+p_f2 pa[10];
